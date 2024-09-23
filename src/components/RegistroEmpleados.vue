@@ -2,7 +2,7 @@
   <div>
     <h1>Registro de Movilidad por Empleado</h1>
     
-    <!-- Formulario para agregar o editar empleados -->
+   
     <form @submit.prevent="guardarEmpleado">
       <div>
         <label>Nombre empleado:</label>
@@ -34,7 +34,7 @@
       <button type="submit">{{ editando ? 'Actualizar' : 'Guardar' }}</button>
     </form>
 
-    <!-- Filtros -->
+
     <div>
       <input v-model="filtroNombre" placeholder="Buscar por nombre" />
       <select v-model="filtroTipoVehiculo">
@@ -132,10 +132,14 @@ export default {
       this.editando = true;
     },
     async eliminarEmpleado(id) {
-      await fetch(`http://localhost:3000/empleados/${id}`, {
-        method: 'DELETE'
-      });
-      this.obtenerEmpleados();
+      try {
+        await fetch(`http://localhost:3000/empleados/${id}`, {
+          method: 'DELETE'
+        });
+        this.obtenerEmpleados(); // Actualizar la lista de empleados después de la eliminación
+      } catch (error) {
+        console.error('Error al eliminar empleado:', error);
+      }
     }
   },
   mounted() {
