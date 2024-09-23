@@ -1,0 +1,28 @@
+{
+  "empleados": [
+    {
+      "id": "1",
+      "nombre": "Juan Pérez",
+      "area": "producción",
+      "tipoVehiculo": "automóvil",
+      "placa": "ABC123",
+      "color": "blanco"
+    },
+    {
+      "id": "ce4d",
+      "nombre": "juana",
+      "area": "contabilidad",
+      "tipoVehiculo": "moto",
+      "placa": "bnas1234",
+      "color": "blanco"
+    },
+    {
+      "id": "52ce",
+      "nombre": "ana",
+      "area": "finanzas",
+      "tipoVehiculo": "moto",
+      "placa": "13e12rf",
+      "color": "rojo"
+    }
+  ]
+}
